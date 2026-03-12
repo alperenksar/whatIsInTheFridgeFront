@@ -3,54 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fridge Dashboard</title>
-    <link rel="stylesheet" href=".../AdminCss/global.css">
+    <title>My Fridge</title>
+    
     <link rel="stylesheet" href="../AdminCss/admin.css">
 </head>
 <body class="dark-theme">
-    <div class="container">
+    <div class="dashboard-container">
+        
         <header class="navbar">
             <div class="nav-left">
-                <div class="logo-box">My Fridge</div>
-                <h1>Dashboard</h1>
+                <div class="logo-box">My Site</div>
+                <h1 class="page-title">Dashboard</h1>
             </div>
             <div class="nav-right">
                 <div class="user-profile">
-                    
-                    <span id="username">Admin</span>
-                
+                    <span class="username">Admin User</span>
                 </div>
             </div>
         </header>
 
-        <div class="sub-nav">
+        <section class="action-bar">
             <div class="tabs">
-                <button class="tab-btn active">Get All Items</button>
-                <button class="tab-btn">Soon Expiry Items</button>
-                <button class="tab-btn">Get All Users</button>
+                <button class="tab-item active">All Items</button>
+                <button class="tab-item">Get Soon Expiry Date</button>
+                <button class="tab-item">Get All Users</button>
             </div>
-            <button class="btn-primary">ADD NEW ITEM</button>
-        </div>
+            <button class="btn-primary" onclick="window.location.href='addItem.html'">NEW ITEM</button>
+        </section>
 
-        <div class="search-bar-container">
-            <div class="search-input-wrapper">
-                <input type="text" id="search-box" placeholder="Search item...">
+        <section class="filter-bar">
+            <div class="search-wrapper">
+                
+                <input type="text" id="search-box" placeholder="Search...">
             </div>
-        </div>
+            
+        </section>
 
         <main class="items-grid" id="items-grid">
-            <div class="collection-card">
-                <div class="card-header">
-                    <h3>Parmesan Cheese</h3>
-                    <span class="tag">Dairy & Eggs</span>
-                </div>
-                <div class="card-body">
-                    <p>Quantity:200</p>
-                    <p>Unit:Gram</p>
-                    <p>Expiry Date:2026-03-15</p>
-                </div>
-            </div>
-            </main>
+            <p class="loading-text">Loading...</p>
+        </main>
+
     </div>
+
+    <script src="../AdminJs/admin.js"></script>
 </body>
 </html>
