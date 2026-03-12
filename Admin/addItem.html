@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Collection | Add Item</title>
+    <link rel="stylesheet" href="../AdminCss/global.css">
+    <link rel="stylesheet" href="../AdminCss/addItem.css">
+</head>
+<body class="dark-theme">
+    <div class="add-container">
+        <div class="add-card">
+            <header class="card-header">
+                <h2>Add New Item</h2>
+                <p>Add a new item to your fridge inventory</p>
+            </header>
+
+            <form id="add-item-form">
+                <div class="input-group">
+                    <label for="name">Name</label>
+                    <div class="name-with-preview">
+                        <input type="text" id="name" placeholder="Enter name (e.g. Milk)" required>        
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="img">Image Url</label>
+                    <div class="name-with-preview">
+                        <input type="text" id="img" placeholder="Enter image Url" required>        
+                    </div>
+                </div>
+
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="category">Category</label>
+                        <select id="category">
+                            <option value="Dairy & Eggs">Dairy & Eggs</option>
+                            <option value="Breakfast & Snacks">Breakfast & Snacks</option>
+                            <option value="Meats">Meats</option>
+                            <option value="Fruits & Vegetables">Fruits & Vegetables</option>
+                            <option value="Sauces & Condiments">Sauces & Condiments</option>
+                            <option value="Ready Meals & Beverages">Ready Meals & Beverages</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="quantity">Quantity</label>
+                        <input type="number" id="quantity" placeholder="0" required>
+                    </div>
+                </div>
+
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="unit">Unit</label>
+                        <select id="unit">
+                            <option value="pcs">Pcs</option>
+                            <option value="kg">KG</option>
+                            <option value="liter">Liter</option>
+                            <option value="pack">Pack</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="expiry">Expiry Date</label>
+                        <input type="date" id="expiry">
+                    </div>
+                </div>
+
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="price">Price</label>
+                        <input type="number" id="price" placeholder="0">
+                        
+                    </div>
+                   
+                </div>
+
+                <div class="actions">
+                    <button type="button" class="btn-secondary" onclick="window.history.back()">CANCEL</button>
+                    <button type="submit" class="btn-primary">ADD COLLECTION</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="addItem.js"></script>
+</body>
+</html>

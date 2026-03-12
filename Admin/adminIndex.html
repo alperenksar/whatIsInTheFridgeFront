@@ -3,94 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="global.css">
-    <link rel="stylesheet" href="admin.css">
+    <title>Fridge Dashboard</title>
+    <link rel="stylesheet" href=".../AdminCss/global.css">
+    <link rel="stylesheet" href="../AdminCss/admin.css">
 </head>
-<body>
-    <div class="admin-wrapper">
-        <aside class="sidebar">
-            <div class="logo">My Fridge</div>
-            <nav>
-                <button class="nav-btn active" data-target="list-section">Get Products</button>
-                <button class="nav-btn" data-target="add-section">Add a new Product</button>
-            </nav>
-            <button id="logout-btn" class="logout-btn">Logout</button>
-        </aside>
-
-        <main class="main-content">
-            <header class="top-header">
-                <input type="text" id="search-box" placeholder="Search" onkeyup="filterWithName()">
-                <div class="user-info">Welcome, <span id="username-display">Admin</span></div>
-            </header>
-
-            <section id="list-section" class="content-section active">
-                <div class="section-header">
-                    <h2>Our Products</h2>
+<body class="dark-theme">
+    <div class="container">
+        <header class="navbar">
+            <div class="nav-left">
+                <div class="logo-box">My Fridge</div>
+                <h1>Dashboard</h1>
+            </div>
+            <div class="nav-right">
+                <div class="user-profile">
+                    
+                    <span id="username">Admin</span>
+                
                 </div>
-                <div id="items-grid" class="items-grid">
-                    <div class="item-card">
-                        <img src="https://cdn-icons-png.flaticon.com/512/2909/2909808.png" alt="Muz">
-                        <div class="item-info">
-                            <h3>Banana</h3>
-                            <p>Category: Dairy & Eggs</p>
-                            <p>Quantity: 5 </p>
-                        </div>
-                        <div class="item-actions">
-                            <button class="delete-btn">Delete</button>
-                        </div>
-                    </div>
+            </div>
+        </header>
+
+        <div class="sub-nav">
+            <div class="tabs">
+                <button class="tab-btn active">Get All Items</button>
+                <button class="tab-btn">Soon Expiry Items</button>
+                <button class="tab-btn">Get All Users</button>
+            </div>
+            <button class="btn-primary">ADD NEW ITEM</button>
+        </div>
+
+        <div class="search-bar-container">
+            <div class="search-input-wrapper">
+                <input type="text" id="search-box" placeholder="Search item...">
+            </div>
+        </div>
+
+        <main class="items-grid" id="items-grid">
+            <div class="collection-card">
+                <div class="card-header">
+                    <h3>Parmesan Cheese</h3>
+                    <span class="tag">Dairy & Eggs</span>
                 </div>
-            </section>
-
-            <section id="add-section" class="content-section">
-                <div class="form-container">
-                    <h2>Yeni Ürün Ekle</h2>
-                    <form id="add-item-form">
-                        <div class="input-group">
-                            <label>Ürün Adı</label>
-                            <input type="text" id="name-input" placeholder="Muz, Süt, Yumurta..." required>
-                            <div class="image-preview-container">
-                                <img id="preview-img" src="https://cdn-icons-png.flaticon.com/512/1261/1261163.png" alt="Önizleme">
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="input-group">
-                                <label>Kategori</label>
-                                <select id="category-select">
-                                    <option value="Meyve">Meyve</option>
-                                    <option value="Sebze">Sebze</option>
-                                    <option value="Süt">Süt Ürünü</option>
-                                    <option value="Et">Et & Şarküteri</option>
-                                    <option value="İçecek">İçecek</option>
-                                </select>
-                            </div>
-                            <div class="input-group">
-                                <label>Miktar</label>
-                                <input type="number" id="quantity-input" placeholder="0">
-                            </div>
-                            <div class="input-group">
-                                <label>Birim</label>
-                                <select id="unit-select">
-                                    <option value="adet">Adet</option>
-                                    <option value="kg">KG</option>
-                                    <option value="litre">Litre</option>
-                                    <option value="paket">Paket</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="input-group">
-                            <label>Son Kullanma Tarihi</label>
-                            <input type="date" id="date-input">
-                        </div>
-
-                        <button type="submit" class="save-btn">Buzdolabına Ekle</button>
-                    </form>
+                <div class="card-body">
+                    <p>Quantity:200</p>
+                    <p>Unit:Gram</p>
+                    <p>Expiry Date:2026-03-15</p>
                 </div>
-            </section>
-        </main>
+            </div>
+            </main>
     </div>
 </body>
 </html>

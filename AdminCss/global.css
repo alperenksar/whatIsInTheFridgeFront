@@ -1,0 +1,11 @@
+@import url('./admin.css');
+@import url('./addItem.css');
+
+:root {
+    --bg-color: #1a1b1e;
+    --card-bg: #25262b;
+    --text-main: #ffffff;
+    --text-dim: #909296;
+    --accent-yellow: #fcc419;
+    --border-color: #373a40;
+}

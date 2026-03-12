@@ -1,0 +1,101 @@
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.add-card {
+    background: var(--card-bg);
+    width: 100%;
+    max-width: 500px;
+    padding: 40px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.card-header h2 { margin: 0; font-size: 1.5rem; }
+.card-header p { color: var(--text-dim); font-size: 0.9rem; margin-top: 5px; margin-bottom: 30px;}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    margin-bottom: 8px;
+}
+
+input, select {
+    background: var(--input-bg);
+    border: 1px solid var(--border-color);
+    padding: 12px;
+    color: white;
+    border-radius: 4px;
+    outline: none;
+}
+
+input:focus { border-color: var(--accent-yellow); }
+
+.input-row {
+    display: flex;
+    gap: 20px;
+}
+
+.input-row .input-group { flex: 1; }
+
+/* Resim Önizleme Düzeni */
+.name-with-preview {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.name-with-preview input { flex: 1; }
+
+.preview-box {
+    width: 50px;
+    height: 50px;
+    background: var(--input-bg);
+    border: 1px solid var(--border-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+}
+
+.preview-box img { width: 30px; height: 30px; object-fit: contain; }
+
+/* Butonlar */
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.btn-primary {
+    background: var(--accent-yellow);
+    color: black;
+    border: none;
+    padding: 12px 24px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-secondary {
+    background: none;
+    border: 1px solid var(--border-color);
+    color: var(--text-dim);
+    padding: 12px 24px;
+    border-radius: 4px;
+    cursor: pointer;
+}
