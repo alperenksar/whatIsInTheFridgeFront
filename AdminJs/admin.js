@@ -31,6 +31,33 @@ const loadItems = async () => {
         console.error("Veriler çekilirken hata oluştu:", err);
     }
 };
-
-// Sayfa açılır açılmaz ürünleri getir
 loadItems();
+
+const searchBox = document.querySelector("#search-box")
+searchBox.addEventListener("keyup",filterItems);
+
+
+function filterItems(e){
+
+    const searchTerm = document.getElementById('search-box').value.toLowerCase();
+    const cards = document.querySelectorAll('.collection-card');
+
+    cards.forEach(card => {
+        
+        const itemName = card.querySelector('h3').innerText.toLowerCase();
+        
+        
+        if (itemName.includes(searchTerm)) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+    });
+};
+
+
+
+
+
+
+
