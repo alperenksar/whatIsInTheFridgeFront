@@ -1,0 +1,138 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main-container{
+    background-color: var(--accent-gold);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height:100vh ;
+    padding: 1rem;
+    font-family: 'Inter';
+    
+}
+
+.container{
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    min-height: 90vh;
+    max-width: 90vh;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+}
+
+#login-screen{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 900px; /* Sabit bir genişlik ver */
+    height: 900px; /* Sabit bir genişlik ver */
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+#login-btn-btn{
+    width: 95%;
+    height: 40px;
+    background-color: var(--accent-gold);
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    
+   
+}
+
+#login-btn-btn:hover{
+    transform: translateY(-1px);
+    background-color: var(--nav-color);
+    color: var(--accent-gold);
+    transition: background-color 0.6s ease , color 0.6s ease;
+}
+
+
+
+
+.username{
+    border-width: 1px;
+    border-radius: 20px;
+    border-color: var(--accent-gold);
+    text-align: center;
+    min-width: 90%;
+    min-height: 50px;
+    font-size: 24px;
+    font-weight: bold;
+   
+}
+
+
+
+.password{
+    border-width: 1px;
+    border-radius: 20px;
+    border-color: var(--accent-gold);
+    text-align: center;
+    min-width: 90%;
+    min-height: 50px;
+     font-size: 24px;
+    font-weight: bold;
+    
+
+}
+
+.form-options {
+    display: flex;             
+    justify-content: space-between; 
+    align-items: center;       
+    width: 90%;               
+    margin-top: 15px;          
+    font-size: 14px;
+    color: var(--nav-color);
+}
+
+
+.forgot-link {
+    color: var(--accent-gold);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+
+}
+
+
+.account{
+    color: var(--nav-color);
+    display: flex;             
+    justify-content: center; 
+    align-items: center;       
+    width: 90%;             
+}
+
+.account:hover{
+
+    transform: translateY(-2px);
+}
+    
+
+
+.account a{
+    text-decoration: none;
+    color: var(--accent-gold);
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+

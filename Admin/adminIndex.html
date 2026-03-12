@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <div class="admin-wrapper">
+        <aside class="sidebar">
+            <div class="logo">My Fridge</div>
+            <nav>
+                <button class="nav-btn active" data-target="list-section">Get Products</button>
+                <button class="nav-btn" data-target="add-section">Add a new Product</button>
+            </nav>
+            <button id="logout-btn" class="logout-btn">Logout</button>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-header">
+                <input type="text" id="search-box" placeholder="Search" onkeyup="filterWithName()">
+                <div class="user-info">Welcome, <span id="username-display">Admin</span></div>
+            </header>
+
+            <section id="list-section" class="content-section active">
+                <div class="section-header">
+                    <h2>Our Products</h2>
+                </div>
+                <div id="items-grid" class="items-grid">
+                    <div class="item-card">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2909/2909808.png" alt="Muz">
+                        <div class="item-info">
+                            <h3>Banana</h3>
+                            <p>Category: Dairy & Eggs</p>
+                            <p>Quantity: 5 </p>
+                        </div>
+                        <div class="item-actions">
+                            <button class="delete-btn">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="add-section" class="content-section">
+                <div class="form-container">
+                    <h2>Yeni Ürün Ekle</h2>
+                    <form id="add-item-form">
+                        <div class="input-group">
+                            <label>Ürün Adı</label>
+                            <input type="text" id="name-input" placeholder="Muz, Süt, Yumurta..." required>
+                            <div class="image-preview-container">
+                                <img id="preview-img" src="https://cdn-icons-png.flaticon.com/512/1261/1261163.png" alt="Önizleme">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-group">
+                                <label>Kategori</label>
+                                <select id="category-select">
+                                    <option value="Meyve">Meyve</option>
+                                    <option value="Sebze">Sebze</option>
+                                    <option value="Süt">Süt Ürünü</option>
+                                    <option value="Et">Et & Şarküteri</option>
+                                    <option value="İçecek">İçecek</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label>Miktar</label>
+                                <input type="number" id="quantity-input" placeholder="0">
+                            </div>
+                            <div class="input-group">
+                                <label>Birim</label>
+                                <select id="unit-select">
+                                    <option value="adet">Adet</option>
+                                    <option value="kg">KG</option>
+                                    <option value="litre">Litre</option>
+                                    <option value="paket">Paket</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Son Kullanma Tarihi</label>
+                            <input type="date" id="date-input">
+                        </div>
+
+                        <button type="submit" class="save-btn">Buzdolabına Ekle</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100px;
+    padding: 30px;
+   
+    
+}
+
+footer:hover{
+    background-color: var(--accent-gold);
+    color: var(--bg-color);
+    transition: background-color 0.4s ease, color 0.4s ease;
+    font-size: bold;
+    
+}
+
