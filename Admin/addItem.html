@@ -24,9 +24,16 @@
                 </div>
 
                 <div class="input-group">
-                    <label for="img">Image Url</label>
+                    <label for="description">Description</label>
                     <div class="name-with-preview">
-                        <input type="text" id="img" placeholder="Enter image Url" required>        
+                        <input type="text" id="description" placeholder="Enter description (e.g. Tesco)" required>        
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="image">Image Url</label>
+                    <div class="name-with-preview">
+                        <input type="text" id="image" placeholder="Enter image Url" required>        
                     </div>
                 </div>
 
@@ -70,17 +77,20 @@
                         <input type="number" id="price" placeholder="0">
                         
                     </div>
+                    <div class="input-group">
+                        <label for="owner">Owner Id</label>
+                        <input type="number" id="owner" placeholder="0">
+                    </div>
                    
                 </div>
 
-                <div class="actions">
-                    <button type="button" class="btn-secondary" onclick="window.history.back()">CANCEL</button>
-                    <button type="submit" class="btn-primary">ADD COLLECTION</button>
-                </div>
+                    <form id="add-item-form">
+                        <button type="submit" class="btn-primary" id="add-item-btn">ADD COLLECTION</button>
+                    </form>
             </form>
         </div>
     </div>
 
-    <script type="module" src="addItem.js"></script>
+    <script type="module" src="../AdminJs/addItem.js"></script>
 </body>
 </html>
