@@ -28,7 +28,7 @@ const loadItems = async () => {
             `;
         });
     } catch (err) {
-        console.error("Veriler çekilirken hata oluştu:", err);
+        console.error("Couldnt get the datas:", err.message);
     }
 };
 loadItems();
@@ -53,6 +53,38 @@ function filterItems(e){
             card.style.display = "none";
         }
     });
+};
+
+
+
+window.deleteItem = async (id) => {
+    
+    if (!confirm("This item will be delete.")) return;
+    
+
+    try {
+        
+        const response = await fetch(`http://localhost:5001/api/items/deleteItem/${id}`, {
+            method: 'DELETE'
+        });
+
+        if (response.ok) {
+            
+            const card = document.getElementById(`item-${id}`);
+            if (card) {
+                card.style.opacity = '0'; 
+                setTimeout(() => {
+                    card.remove(); 
+                }, 500);
+            }
+            console.log(`ID: ${id} is deleted.`);
+        } else {
+            alert("There is an error about deleting");
+        }
+    } catch (err) {
+        console.error("Connection error:", err.message);
+        alert("Cant react the server");
+    }
 };
 
 
