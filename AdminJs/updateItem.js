@@ -5,7 +5,7 @@ console.log(updateItemForm);
 
 updateItemForm.addEventListener("submit", async(e) =>{
     e.preventDefault();
-    const itemId = 2; 
+    const itemId = 5; 
 
     const itemData = {
         name: document.getElementById('name').value,
@@ -44,7 +44,7 @@ updateItemForm.addEventListener("submit", async(e) =>{
 
 document.addEventListener('DOMContentLoaded', async () => {
     
-    const itemId = 2; 
+    const itemId = 5; 
     
     try {
         const response = await fetch(`http://localhost:5001/api/items/getItem/${itemId}`);
