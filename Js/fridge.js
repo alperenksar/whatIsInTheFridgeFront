@@ -1,3 +1,5 @@
+import {linkToLogin} from './header.js';
+
 const roleCategory = document.querySelectorAll(".role-item");
 
 
