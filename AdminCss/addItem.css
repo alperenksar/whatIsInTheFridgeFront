@@ -19,7 +19,7 @@ body {
 }
 
 .card-header h2 { margin: 0; font-size: 1.5rem; }
-.card-header p { color: var(--text-dim); font-size: 0.9rem; margin-top: 5px; margin-bottom: 30px;}
+.card-header p { color: var(--text-main); font-size: 0.9rem; margin-top: 5px; margin-bottom: 30px;}
 
 .input-group {
     display: flex;
@@ -42,11 +42,16 @@ input, select {
     outline: none;
 }
 
+select:focus{
+    background-color: var(--bg-color);
+}
+
 input:focus { border-color: var(--accent-yellow); }
 
 .input-row {
     display: flex;
     gap: 20px;
+   
 }
 
 .input-row .input-group { flex: 1; }
@@ -73,29 +78,3 @@ input:focus { border-color: var(--accent-yellow); }
 
 .preview-box img { width: 30px; height: 30px; object-fit: contain; }
 
-/* Butonlar */
-.actions {
-    display: flex;
-    justify-content: flex-end;
-    gap: 15px;
-    margin-top: 20px;
-}
-
-.btn-primary {
-    background: var(--accent-yellow);
-    color: black;
-    border: none;
-    padding: 12px 24px;
-    font-weight: bold;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.btn-secondary {
-    background: none;
-    border: 1px solid var(--border-color);
-    color: var(--text-dim);
-    padding: 12px 24px;
-    border-radius: 4px;
-    cursor: pointer;
-}

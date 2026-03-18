@@ -1,46 +1,90 @@
 import {linkToLogin} from './header.js';
 
 let allImages = [];
-let allImagesUrl = [];
 
 async function loadImages() {
     const response = await fetch('../images.json');
     allImages = await response.json();
 
-    console.log(allImages);
+   
     
 }
 loadImages();
 
-function getImageByName(itemName){
 
-    let deneme = allImages[itemName]
+
+
+
+const roleCategory = document.querySelectorAll(".role-item");
+const allTabRoles = document.querySelectorAll(".role");
+
+allTabRoles.forEach(role => {
+    role.addEventListener('click',(e) => {
+       
+        allTabRoles.forEach(t => t.classList.remove('active'));
+        e.target.classList.add('active');
         
-    console.log(allImages[itemName]);
-    return deneme;
-}
+    });
+
+
+    
+});
 
 
 
 
 
-const usedCategories = document.querySelectorAll(".role-item");
-const recentlyBought = document.querySelector(".item-gallery");
-console.log(recentlyBought);
+roleCategory.forEach(category => {
+    category.addEventListener('click',async(e) =>{
+        
+        
 
-usedCategories.forEach(category => {
-    category.addEventListener('click', (event) => {
-        console.log(`Basılan öğe:` + event.target.innerText);
+       
+        let cate = e.target.innerText;
+
+        try {
+            const response = await fetch(`https://whatisinthefridge.onrender.com/api/items/filterWithCategory?category=${cate}`);
+            const items = await response.json();
+
+            recentlyBought.innerHTML = ''; 
+
+            items.forEach(item => {
+            
+                recentlyBought.innerHTML += `
+                    <div class="item-card">
+                        <div class="card-img">
+                            <img src="${imageDictionary[item.name]}" alt="${item.name}">
+                            <div class="expiry-date">${new Date(item.expiry_date).toLocaleDateString('en-EN')}</div>
+                        </div>
+                        <h3>${item.name}</h3>
+                        <p class="category">${item.category}</p>
+                    </div>
+             `;
+            });
+        } catch (err) {
+            console.error("Couldnt get the datas:", err.message);
+        }
+
     });
 });
 
 
 
-const recentlyUsedItems = async () => {
+
+
+const recentlyBought = document.querySelector(".item-gallery");
+console.log(recentlyBought);
+
+
+
+
+const recentlyBoughtItems = async () => {
+
+   
 
     try {
         
-        const response = await fetch('http://localhost:5001/api/items/getRecentlyBought');
+        const response = await fetch(`https://whatisinthefridge.onrender.com/api/items/getItems`);
         const items = await response.json();
 
         recentlyBought.innerHTML = ''; 
@@ -50,7 +94,7 @@ const recentlyUsedItems = async () => {
             recentlyBought.innerHTML += `
                 <div class="item-card">
                     <div class="card-img">
-                        <img src="${iconDictionary[item.name]}" alt="${item.name}">
+                        <img src="${imageDictionary[item.name]}" alt="${item.name}">
                         <div class="expiry-date">${new Date(item.expiry_date).toLocaleDateString('en-EN')}</div>
                     </div>
                     <h3>${item.name}</h3>
@@ -62,26 +106,26 @@ const recentlyUsedItems = async () => {
         console.error("Couldnt get the datas:", err.message);
     }
 };
-recentlyUsedItems();
+recentlyBoughtItems();
 
 
 
-let iconDictionary = {}; // Tüm eşleşmeler bu değişkende duracak
+let imageDictionary = {}; 
 
 async function initializeIcons() {
     const response = await fetch('../images.json');
     const data = await response.json();
 
-    // reduce fonksiyonu ile diziyi tek bir objeye (sözlüğe) indirgiyoruz
-    iconDictionary = data.reduce((acc, item) => {
-        acc[item.name] = item.url; // İsim anahtar, URL değer oluyor
+    
+    imageDictionary = data.reduce((acc, item) => {
+        acc[item.name] = item.url; 
         return acc;
     }, {});
 
-    console.log("Eşleşmeler Değişkene Atandı:", iconDictionary);
+    
 }
 
-// Sayfa açılışında bir kez çalıştır
+
 initializeIcons();
 
 

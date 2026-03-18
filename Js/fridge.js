@@ -12,7 +12,7 @@ roleCategory.forEach(category => {
 
         try {
         
-        const response = await fetch(`http://localhost:5001/api/items/filterWithCategory?category=${e.target.innerText}`);
+        const response = await fetch(`https://whatisinthefridge.onrender.com/api/items/filterWithCategory?category=${e.target.innerText}`);
         const items = await response.json();
 
         const grid = document.getElementById('item-grid');
@@ -42,22 +42,22 @@ roleCategory.forEach(category => {
 
 
 
-let imageDictionary = {}; // Tüm eşleşmeler bu değişkende duracak
+let imageDictionary = {}; 
 
 async function initializeIcons() {
     const response = await fetch('../images.json');
     const data = await response.json();
 
-    // reduce fonksiyonu ile diziyi tek bir objeye (sözlüğe) indirgiyoruz
+    
     imageDictionary = data.reduce((acc, item) => {
-        acc[item.name] = item.url; // İsim anahtar, URL değer oluyor
+        acc[item.name] = item.url; 
         return acc;
     }, {});
 
     console.log("Eşleşmeler Değişkene Atandı:", imageDictionary);
 }
 
-// Sayfa açılışında bir kez çalıştır
+
 initializeIcons();
 
 

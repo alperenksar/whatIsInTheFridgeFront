@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const itemId = 5; 
     
     try {
-        const response = await fetch(`http://localhost:5001/api/items/getItem/${itemId}`);
+        const response = await fetch(`https://whatisinthefridge.onrender.com/api/items/getItem/${itemId}`);
         const data = await response.json();
 
         

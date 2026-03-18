@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ürün Detayı - What's in the Fridge</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../Css/global.css">
+    <link rel="stylesheet" href="../Css/productDetail.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">What is in the<span class="gold"> FRIDGE</span></div>
+        <nav>
+            <ul>
+                <li><a href="./index.html">HOME</a></li>
+               
+                <li><a href="./Html/buy-list.html">BUY LIST</a></li>
+            </ul>
+        </nav>
+        <div class="nav-right">
+            <div class="search-box">
+                <input type="text" placeholder="Search...">
+            </div>
+            <button class="login-btn">LOGIN</button>
+        </div>
+    </header>
+
+    <div class="detail-container">
+        <main class="product-content">
+            <div class="product-visual">
+                <div class="image-wrapper">
+                    <img id="product-image" src="placeholder.png" alt="Ürün Görseli">
+                </div>
+                <div id="expiry-status" class="status-badge">
+                    </div>
+            </div>
+
+            <div class="product-info">
+                <div class="info-header">
+                    <span id="product-category" class="category-label">Category</span>
+                    <h2 id="product-name">Loading...</h2>
+                </div>
+
+                <div class="info-grid">
+                    <div class="info-item">
+                        <i class="fas fa-calendar-alt icon-expiry"></i>
+                        <div class="info-text">
+                            <span class="label">Son Kullanma Tarihi</span>
+                            <span id="product-expiry-date" class="value">--/--/----</span>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fas fa-boxes icon-quantity"></i>
+                        <div class="info-text">
+                            <span class="label">Miktar / Stok</span>
+                            <span id="product-quantity" class="value">--</span>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fas fa-tag icon-id"></i>
+                        <div class="info-text">
+                            <span class="label">Ürün ID</span>
+                            <span id="product-id" class="value">#--</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-notes">
+                    <h3><i class="fas fa-sticky-note"></i> Notlar</h3>
+                    <p id="product-notes-text">Bu ürün için eklenmiş bir not bulunmuyor.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../js/productDetail.js"></script>
+</body>
+</html>

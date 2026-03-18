@@ -17,7 +17,7 @@ addItemForm.addEventListener("submit", async(e) =>{
     };
 
     try{
-            const response = await fetch('http://localhost:5001/api/items/addItem', {
+            const response = await fetch('https://whatisinthefridge.onrender.com/api/items/addItem', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(itemData)

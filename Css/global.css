@@ -1,5 +1,6 @@
 @import url('./footer.css');
 @import url('./header.css');
+@import url('./productDetail.css');
 
 
 @media (max-width: 768px) {
@@ -23,3 +24,5 @@
     --text-gray: #a0a0a0;
     --card-bg: #222227;
 }
+
+

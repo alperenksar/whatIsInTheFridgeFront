@@ -24,7 +24,7 @@ allTabs.forEach(tab => {
         if(e.target.innerText === "All Items"){
 
             try {
-                    const response = await fetch(`http://localhost:5001/api/items/getItems`);
+                    const response = await fetch(`https://whatisinthefridge.onrender.com/api/items/getItems`);
                     const items = await response.json();
 
                     const grid = document.getElementById('items-grid');
@@ -67,7 +67,7 @@ allTabs.forEach(tab => {
         if(e.target.innerText === "Get Soon Expiry Date"){
 
             try {
-                    const response = await fetch(`http://localhost:5001/api/items/getExpiringItems`);
+                    const response = await fetch(`https://whatisinthefridge.onrender.com/api/items/getExpiringItems`);
                     const data = await response.json();
                     const items = data.items;
                     console.log(items);
@@ -111,7 +111,7 @@ allTabs.forEach(tab => {
         if(e.target.innerText === "Get All Users"){
 
             try {
-                    const response = await fetch(`http://localhost:5001/api/auth/getUsers`);
+                    const response = await fetch(`https://whatisinthefridge.onrender.com/api/auth/getUsers`);
                     const users = await response.json();
                     
                     console.log(users);
@@ -150,7 +150,7 @@ allTabs.forEach(tab => {
 const loadItems = async () => {
     try {
         
-        const response = await fetch('http://localhost:5001/api/items/getItems');
+        const response = await fetch('https://whatisinthefridge.onrender.com/api/items/getItems');
         const items = await response.json();
 
         const grid = document.getElementById('items-grid');
@@ -193,7 +193,7 @@ window.deleteItem = async (id) => {
 
     try {
         
-        const response = await fetch(`http://localhost:5001/api/items/deleteItem/${id}`, {
+        const response = await fetch(`https://whatisinthefridge.onrender.com/api/items/deleteItem/${id}`, {
             method: 'DELETE'
         });
 
